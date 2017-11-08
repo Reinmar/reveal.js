@@ -88,7 +88,7 @@
 
 		.reveal .abbr-exp {
 			font-size: 30%;
-			color: #aaa;
+			color: #777;
 		}
 
 		.reveal img {
@@ -116,7 +116,7 @@
 
 				<aside class="notes">
 					* Witam wszystkich!<br>
-					* Pracuję z zaniedbaną technologią webową<br>
+					* Z tego też względu od 6 lat pracuję z chyba najbardziej zaniedbaną technologią webową<br>
 					* Zanim zacznę – historia moich przygotowań<br>
 					* 5 miesięcy wcześniej i zapomniałem<br>
 					* Info przed urlopem<br>
@@ -173,7 +173,9 @@
 					* Korzystając z okazji<br>
 					* MSWord jest WYSIWYG-iem<br>
 					* W sieci potrzebujemy separacji treści i stylów (responsive design, reusing content)<br>
-					* Lepiej – RTE, albo WYSIWYM
+					* Lepiej – RTE, albo WYSIWYM<br><br>
+
+					OK, zatem jak działają RTE?
 				</aside>
 			</section>
 
@@ -188,6 +190,7 @@
 					* Kiedy dołączyłem do zespołu myślałem, że CKEditor używa &lt;textarea>.<br>
 					* &lt;div contentEditable=true> bądź document.designMode<br>
 					* Zaimplementowany w IE5.5 w 2000 roku następnie reverse-engineered do innych przeglądarek
+					* DEMO – pisanie, bold, enter, italic
 				</aside>
 			</section>
 
@@ -256,7 +259,8 @@
 					* Zaczyna się zawsze tak samo (nawet dzisiaj) – contentEditable, minimalny UI i GOTOWE. I na piwo!<br>
 					* Zaczynają napływać bug reporty albo prośby o ficzery<br>
 					* Release the hacks! Obchodzenie problemów, enter, mutacje (skrót)<br>
-					* Lata mijają... a deweloperzy się wykruszają. Całe handlery, wrapery, itp.
+					* Lata mijają... a deweloperzy się wykruszają. Całe handlery, wrapery, itp.<br>
+					* Architektura pozostaje
 				</aside>
 			</section>
 
@@ -269,8 +273,9 @@
 
 					* Implementacja ficzerów to grzebanie w DOM<br>
 					* Znajomość quirków<br>
-					* Powiązanie widoku i danych<br>
-					* Niejasny data flow
+					* Powiązanie widoku i danych<br><br>
+
+					Rezultat: ogromne ograniczenia
 				</aside>
 			</section>
 
@@ -296,8 +301,8 @@
 
 				<pre><code>
 &lt;paragraph>
-	"X" (bold=true)
-	"Y" (italic=true)
+	"Foo" (bold=true)
+	"Bar" (italic=true)
 &lt;/paragraph>
 				</code></pre>
 			</section>
@@ -325,7 +330,7 @@
 			</section>
 
 			<section>
-				<h1>New architecture</h1>
+				<h1>Success?</h1>
 				<ul>
 					<li class="fragment">Hack are still there</li>
 					<li class="fragment">Problem: input and rendering</li>
@@ -333,14 +338,15 @@
 				</ul>
 
 				<aside class="notes">
-					* Choć dla programisty ficzera to bajka, dla nas to kosmiczna warstwa magii...<br>
+					Choć dla programisty ficzera to bajka, dla nas to kosmiczna warstwa magii...<br><br>
+
 					* Problem: Obsługa inputu i renderowanie zmian – WSZYSTKO<br>
 					* Przykład: typing i spellchecking w CKE5 – mutacje, diff, keyhandlery, heurystyka
 				</aside>
 			</section>
 
 			<section>
-				<h1>Do we need contentEditable?</h1>
+				<h1 contenteditable="true">Do we need contentEditable?</h1>
 
 				<aside class="notes">
 					* Problemem jest cE i API. Czy w ogóle potrzebujemy cE?<br>
@@ -354,7 +360,7 @@
 			<section>
 				<h1>Text editing</h1>
 				<ul>
-					<li class="fragment">IME – Input Method Engine</li>
+					<li class="fragment" contenteditable="true">IME – Input Method Engine</li>
 					<li class="fragment">onscreen keyboard</li>
 					<li class="fragment">spellchecking, autocorrect, suggestions</li>
 					<li class="fragment">cut &amp; paste</li>
@@ -374,6 +380,13 @@
 					<li class="fragment">contentEditable=minimal</li>
 					<li class="fragment">beforeInput event</li>
 				</ul>
+
+				<aside class="notes">
+					Na szczęście do roboty wzięło się W3C (co ciekawe - zaczęło się od MS)<br><br>
+
+					* cE=minimal - subset<br>
+					* bE event – bardziej semantyczny, PREVENTOWALNY
+				</aside>
 			</section>
 
 			<section>
@@ -393,6 +406,10 @@
 
 			<section>
 				<h1>IME all the things</h1>
+
+				<p><img src="assets/android-keyboard.png" alt="Typing on Android with autosuggestions" width="400"></p>
+
+				<!--TODO link to source: https://www.howtogeek.com/174460/5-android-keyboard-replacements-to-help-you-type-faster/-->
 
 				<aside class="notes">
 					Pisanie na Androidzie to IME. Klawiatury to aplikacje, OS nic nie wie.<br><br>
