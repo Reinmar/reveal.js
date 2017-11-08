@@ -113,6 +113,17 @@
 					<p id="intro-presentation-date">2017-11-08</p>
 					<p id="intro-profile-twitter"><a href="https://twitter.com/reinmarpl">@reinmarpl</a></p>
 				</div>
+
+				<aside class="notes">
+					* Witam wszystkich!<br>
+					* Pracuję z zaniedbaną technologią webową<br>
+					* Zanim zacznę – historia moich przygotowań<br>
+					* 5 miesięcy wcześniej i zapomniałem<br>
+					* Info przed urlopem<br>
+					* Jak pracować w wakacje<br>
+					* Poszukując nowego tematu nie mogłem oderwać się od pracy...<br>
+					* Pretensjonalny tytuł
+				</aside>
 			</section>
 
 			<section>
@@ -123,21 +134,47 @@
 					<li class="fragment">@mentions</li>
 					<li class="fragment">Rich-text</li>
 				</ul>
+
+				<aside class="notes">
+					* Chciałbym Wam opowiedzieć o edytorach tekstu<br>
+					* Bierzemy edycję tekstu za pewnik. Twitter, Facebook, GH, Gmail, GDocs, CMS...<br>
+					* W najprostszej postaci żeby umożliwić edycję – &lt;input><br>
+					* Już @mentions są problemem<br>
+					* Kiedy potrzeba czegoś więcej – Markdown
+				</aside>
 			</section>
 
 			<section>
 				<h1>Markdown</h1>
 				<h2 class="fragment" style="color: #f7302f">Nope, nope, nope</h2>
+
+				<aside class="notes">
+					* Jestem programistą Markdowna<br>
+					* Nie umiem MD, tabelki, listy, podlinkowany obrazek, specyfikacja<br>
+					* Wzorcowa implementacja i Markdown flavors
+				</aside>
 			</section>
 
 			<section>
 				<h1>Markdown alternative?</h1>
+
+				<aside class="notes">
+					* Zatem, co jeśli nie Markdown? Co jeśli nasi użytkownicy potrzebują więcej bądź lepiej?<br>
+					* RTE!
+				</aside>
 			</section>
 
 			<section>
 				<h1 style="color: #f7302f">W<span class="abbr-exp">hat</span>Y<span class="abbr-exp">ou</span>S<span class="abbr-exp">ee</span>I<span class="abbr-exp">s</span>W<span class="abbr-exp">hat</span>Y<span class="abbr-exp">ou</span>G<span class="abbr-exp">get</span></h1>
 				<h1 style="color: #2cc93c" class="fragment">R<span class="abbr-exp">ich</span>T<span class="abbr-exp">ext</span>E<span class="abbr-exp">ditor</span></h1>
 				<h1 style="color: #2cc93c" class="fragment">W<span class="abbr-exp">hat</span>Y<span class="abbr-exp">ou</span>S<span class="abbr-exp">ee</span>I<span class="abbr-exp">s</span>W<span class="abbr-exp">hat</span>Y<span class="abbr-exp">ou</span>M<span class="abbr-exp">ean</span></h1>
+
+				<aside class="notes">
+					* Korzystając z okazji<br>
+					* MSWord jest WYSIWYG-iem<br>
+					* W sieci potrzebujemy separacji treści i stylów (responsive design, reusing content)<br>
+					* Lepiej – RTE, albo WYSIWYM
+				</aside>
 			</section>
 
 			<section contenteditable="true">
@@ -146,6 +183,12 @@
 					<li><code>contentEditable="true"</code></li>
 					<li>Introduced in IE 5.5 (2000)</li>
 				</ul>
+
+				<aside class="notes">
+					* Kiedy dołączyłem do zespołu myślałem, że CKEditor używa &lt;textarea>.<br>
+					* &lt;div contentEditable=true> bądź document.designMode<br>
+					* Zaimplementowany w IE5.5 w 2000 roku następnie reverse-engineered do innych przeglądarek
+				</aside>
 			</section>
 
 			<section>
@@ -153,11 +196,21 @@
 					<p>&ldquo;Wow, contentEditable is AWESOME!<br>Let's create a WYSIWYG editor (maybe)!&rdquo;</p>
 					<footer>– Random Twitter profile</footer>
 				</blockquote>
+
+				<aside class="notes">
+					* W kółko widzę na Twitterze<br>
+					* Nie tak szybko...
+				</aside>
 			</section>
 
 			<section>
 				<h1>Going deeper</h1>
 				<p contenteditable="true">Edit me...</p>
+
+				<aside class="notes">
+					* Enter<br>
+					* Paste
+				</aside>
 			</section>
 
 			<section>
@@ -169,6 +222,10 @@
 					<li class="fragment">Missing or poor APIs</li>
 					<li class="fragment">Hacks required</li>
 				</ul>
+
+				<aside class="notes">
+					Efekt jest taki – jeśli coś działa, to jesteśmy zaskoczeni.
+				</aside>
 			</section>
 
 			<section>
@@ -178,6 +235,10 @@
 					<li class="fragment">Reverse-engineered implementations</li>
 					<li class="fragment">Singleton</li>
 				</ul>
+
+				<aside class="notes">
+					Jak to się stało, że tak potrzebna technologia osiągnęła taki stan rozkładu?
+				</aside>
 			</section>
 
 			<section>
@@ -189,11 +250,28 @@
 					<li class="fragment">Release all the hacks!</li>
 					<li class="fragment">Years pass...</li>
 				</ul>
+
+				<aside class="notes">
+					* Na szczęście nie jest tak źle – selection API<br>
+					* Zaczyna się zawsze tak samo (nawet dzisiaj) – contentEditable, minimalny UI i GOTOWE. I na piwo!<br>
+					* Zaczynają napływać bug reporty albo prośby o ficzery<br>
+					* Release the hacks! Obchodzenie problemów, enter, mutacje (skrót)<br>
+					* Lata mijają... a deweloperzy się wykruszają. Całe handlery, wrapery, itp.
+				</aside>
 			</section>
 
 			<section>
 				<h1>Architecture</h1>
 				<p><img src="assets/diagram-architecture-past.png" alt="Diagram of the DOM-Controller architecture." width="700"></p>
+
+				<aside class="notes">
+					Taka architektura to wieczne cierpienie dewelopera.<br><br>
+
+					* Implementacja ficzerów to grzebanie w DOM<br>
+					* Znajomość quirków<br>
+					* Powiązanie widoku i danych<br>
+					* Niejasny data flow
+				</aside>
 			</section>
 
 			<section>
@@ -202,6 +280,11 @@
 					<li class="fragment">Let's start from scratch</li>
 					<li class="fragment">Custom data model</li>
 				</ul>
+
+				<aside class="notes">
+					* Zacznijmy od zera. Architektury nie da się zmienić iteracyjnie. Quill, Draft, PM, CKE 5<br>
+					* Custom data model. Co się zmienia? Nic odkrywczego – MVC
+				</aside>
 			</section>
 
 			<section>
@@ -227,6 +310,12 @@
 					<li class="fragment">Hides hacks</li>
 					<li class="fragment">Advanced features (e.g. real-time collab editing)</li>
 				</ul>
+
+				<aside class="notes">
+					* Drastycznie upraszcza się implementacja ficzerów<br>
+					* Separacja widoku – elastyczność<br>
+					* Quirki znikają – w warstwie renderującej (przyjmując CKE5)
+				</aside>
 			</section>
 
 			<section>
@@ -242,10 +331,24 @@
 					<li class="fragment">Problem: input and rendering</li>
 					<li class="fragment">Example: typing</li>
 				</ul>
+
+				<aside class="notes">
+					* Choć dla programisty ficzera to bajka, dla nas to kosmiczna warstwa magii...<br>
+					* Problem: Obsługa inputu i renderowanie zmian – WSZYSTKO<br>
+					* Przykład: typing i spellchecking w CKE5 – mutacje, diff, keyhandlery, heurystyka
+				</aside>
 			</section>
 
 			<section>
 				<h1>Do we need contentEditable?</h1>
+
+				<aside class="notes">
+					* Problemem jest cE i API. Czy w ogóle potrzebujemy cE?<br>
+					* Aloha 2. Jest i nie ma.<br>
+					* Dlaczego?<br>
+					* Przykład: pisanie "ą" i "à"<br>
+					* To był najprostszy przykład.
+				</aside>
 			</section>
 
 			<section>
@@ -259,6 +362,10 @@
 					<li class="fragment">selection (LTR-RTL, x-pos, touch devices, text rects, word and line selections...)</li>
 				</ul>
 				<p class="fragment" style="font-size: 50%">More: <a href="https://medium.com/content-uneditable/contenteditable-the-good-the-bad-and-the-ugly-261a38555e9c">&ldquo;ContentEditable — The Good, The Bad and The Ugly&rdquo;</a></p>
+
+				<aside class="notes">
+					Contenteditable nam to załatwia... niespójnie ale załatwia.
+				</aside>
 			</section>
 
 			<section>
@@ -286,20 +393,47 @@
 
 			<section>
 				<h1>IME all the things</h1>
+
+				<aside class="notes">
+					Pisanie na Androidzie to IME. Klawiatury to aplikacje, OS nic nie wie.<br><br>
+
+					* Przeglądarka to jedynie warstwa pośrednicząca<br>
+					* Deweloper nie dostaje żadnych informacji
+				</aside>
 			</section>
 
 			<section>
 				<h1>Drop contentEditable?</h1>
 
 				<p><img src="assets/diagram-architecture-imeview.png" alt="Diagram of the user and IME views architecture." width="700"></p>
+
+				<aside class="notes">
+					* Nowy model wymaga wielu nowych API<br>
+					* I... hacków<br>
+					* MVP za 10 lat
+				</aside>
 			</section>
 
 			<section>
 				<h1>Google Docs</h1>
+
+				<aside class="notes">
+					setInterval( () => console.log( document.activeElement ), 1000 )<br><br>
+
+					* Czy to nie przypomina zaproponowanej architektury?<br>
+					* 1MB JS<br>
+					* Spellchecking, a11y, mobile
+				</aside>
 			</section>
 
 			<section>
 				<h1>To co z tymi drzwiami?</h1>
+
+				<aside class="notes">
+					* Z jednej strony contentEditable jest tak dostępny, ale zdrugiej jest bezużyteczny.<br>
+					* Specyfikacja – z jednej strony działające cE, z drugiej ślepa ścieżka?<br>
+					* Polityka w W3C – każdy ma coś do ugrania
+				</aside>
 			</section>
 
 			<section>
