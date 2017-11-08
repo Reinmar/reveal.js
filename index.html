@@ -74,6 +74,23 @@
 			text-decoration: underline;
 		}
 
+		.reveal h1, .reveal h2, .reveal h3 {
+			text-transform: none;
+		}
+
+		.reveal h1 {
+			font-size: 2em;
+		}
+
+		.reveal blockquote footer {
+			 font-size: 50%;
+		}
+
+		.reveal .abbr-exp {
+			font-size: 30%;
+			color: #aaa;
+		}
+
 	</style>
 </head>
 <body>
@@ -95,8 +112,195 @@
 			</section>
 
 			<section>
-				<h1>Slide 2</h1>
-				<p contenteditable=true>Foo!</p>
+				<h1>Text editing</h1>
+				<ul>
+					<li class="fragment">It's everywhere</li>
+					<li class="fragment">Starts with plain-text</li>
+					<li class="fragment">@mentions</li>
+					<li class="fragment">Semantics</li>
+				</ul>
+			</section>
+
+			<section>
+				<h1>Markdown</h1>
+				<h2 class="fragment">Nope, nope, nope</h2>
+			</section>
+
+			<section>
+				<h1>Markdown alternative?</h1>
+			</section>
+
+			<section>
+				<h1 style="color: #f7302f">W<span class="abbr-exp">hat</span>Y<span class="abbr-exp">ou</span>S<span class="abbr-exp">ee</span>I<span class="abbr-exp">s</span>W<span class="abbr-exp">hat</span>Y<span class="abbr-exp">ou</span>G<span class="abbr-exp">get</span></h1>
+				<h1 style="color: #2cc93c" class="fragment">R<span class="abbr-exp">ich</span>T<span class="abbr-exp">ext</span>E<span class="abbr-exp">ditor</span></h1>
+				<h1 style="color: #2cc93c" class="fragment">W<span class="abbr-exp">hat</span>Y<span class="abbr-exp">ou</span>S<span class="abbr-exp">ee</span>I<span class="abbr-exp">s</span>W<span class="abbr-exp">hat</span>Y<span class="abbr-exp">ou</span>M<span class="abbr-exp">ean</span></h1>
+			</section>
+
+			<section contenteditable="true">
+				<h1>ContentEditable</h1>
+				<ul>
+					<li><code>contentEditable="true"</code></li>
+					<li>Introduced in IE 5.5 (2000)</li>
+				</ul>
+			</section>
+
+			<section>
+				<blockquote>
+					<p>&ldquo;Wow, contentEditable is AWESOME!<br>Let's create a WYSIWYG editor (maybe)!&rdquo;</p>
+					<footer>– Random Twitter profile</footer>
+				</blockquote>
+			</section>
+
+			<section>
+				<h1>Going deeper</h1>
+				<p contenteditable="true">Edit me...</p>
+			</section>
+
+			<section>
+				<h1>Broken promise</h1>
+				<ul>
+					<li class="fragment">Inconsistent implementations</li>
+					<li class="fragment">Bugs</li>
+					<li class="fragment">Missing specification</li>
+					<li class="fragment">Missing or poor APIs</li>
+					<li class="fragment">Hacks required</li>
+				</ul>
+			</section>
+
+			<section>
+				<h1>But why?</h1>
+				<ul>
+					<li class="fragment">First implementation</li>
+					<li class="fragment">Reverse-engineered implementations</li>
+					<li class="fragment">Singleton</li>
+				</ul>
+			</section>
+
+			<section>
+				<h1>It can't be that bad?</h1>
+				<ul>
+					<li class="fragment">Selection API</li>
+					<li class="fragment">Common past – plain contentEditable</li>
+					<li class="fragment">Feedback</li>
+					<li class="fragment">Release all the hacks!</li>
+					<li class="fragment">Years pass...</li>
+				</ul>
+			</section>
+
+			<section>
+				<h1>Architecture</h1>
+
+				[[DIAGRAM – DOM controller]]
+			</section>
+
+			<section>
+				<h1>New era</h1>
+				<ul>
+					<li class="fragment">Let's start from scratch</li>
+					<li class="fragment">Custom data model</li>
+				</ul>
+			</section>
+
+			<section>
+				<h1>Custom == better</h1>
+
+				<pre><code>
+&lt;p>&lt;b>Foo&lt;/b>&lt;i>Bar&lt;/i>&lt;/p>
+				</code></pre>
+
+				<pre><code>
+&lt;paragraph>
+	"X" (bold=true)
+	"Y" (italic=true)
+&lt;/paragraph>
+				</code></pre>
+			</section>
+
+			<section>
+				<h1>Custom data model</h1>
+				<ul>
+					<li class="fragment">Simplifies features implementation</li>
+					<li class="fragment">Separates the view</li>
+					<li class="fragment">Hides hacks</li>
+					<li class="fragment">Advanced features (e.g. real-time collab editing)</li>
+				</ul>
+			</section>
+
+			<section>
+				<h1>New architecture</h1>
+
+				[[DIAGRAM – DOM-MVC]]
+			</section>
+
+			<section>
+				<h1>New architecture</h1>
+				<ul>
+					<li class="fragment">Hack are still there</li>
+					<li class="fragment">Problem: input and rendering</li>
+					<li class="fragment">Example: typing</li>
+				</ul>
+			</section>
+
+			<section>
+				<h1>Do we need contentEditable?</h1>
+			</section>
+
+			<section>
+				<h1>Text editing</h1>
+				<ul>
+					<li class="fragment">IME – Input Method Engine</li>
+					<li class="fragment">onscreen keyboard</li>
+					<li class="fragment">spellchecking, autocorrect, suggestions</li>
+					<li class="fragment">cut &amp; paste</li>
+					<li class="fragment">accessibility</li>
+					<li class="fragment">selection (LTR-RTL, x-pos, touch devices, text rects, word and line selections...)</li>
+				</ul>
+				<p class="fragment" style="font-size: 50%">More: <a href="https://medium.com/content-uneditable/contenteditable-the-good-the-bad-and-the-ugly-261a38555e9c">&ldquo;ContentEditable — The Good, The Bad and The Ugly&rdquo;</a></p>
+			</section>
+
+			<section>
+				<h1>W3C to the rescue</h1>
+				<ul>
+					<li class="fragment">contentEditable=minimal</li>
+					<li class="fragment">beforeInput event</li>
+				</ul>
+			</section>
+
+			<section>
+				<h1>Updated architecture</h1>
+
+				[[DIAGRAM – beforeInput-MVC-DOM]]
+			</section>
+
+			<section>
+				<h1>3 years later...</h1>
+				<ul>
+					<li class="fragment">beforeInput</li>
+					<li class="fragment"><a href="https://w3c.github.io/editing/">New specs</a> (e.g. <a href="https://w3c.github.io/input-events/index.html">Input Events</a> – level 1 and level 2)</li>
+					<li class="fragment">Google rejects L2</li>
+				</ul>
+			</section>
+
+			<section>
+				<h1>IME all the things</h1>
+			</section>
+
+			<section>
+				<h1>Drop contentEditable?</h1>
+
+				[[DIAGRAM – beforeInput-MVC-DOM]]
+			</section>
+
+			<section>
+				<h1>Google Docs</h1>
+			</section>
+
+			<section>
+				<h1>To co z tymi drzwiami?</h1>
+			</section>
+
+			<section>
+				<h1>Dziękuję!</h1>
 			</section>
 		</div>
 	</div>
