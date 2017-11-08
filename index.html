@@ -91,6 +91,10 @@
 			color: #aaa;
 		}
 
+		.reveal img {
+			border: none !important;
+			box-shadow: none !important;
+		}
 	</style>
 </head>
 <body>
@@ -105,7 +109,7 @@
 						<a href="https://twitter.com/reinmarpl"><img src="assets/avatar.jpg" alt="Zdjęcie profilowe"></a>
 					</p>
 					<p id="intro-profile-name">Piotrek Koszuliński</p>
-					<p id="intro-presentation-title">"Za szeroko zamkniętymi drzwiami – contentEditable" [PL]</p>
+					<p id="intro-presentation-title">&ldquo;Za szeroko zamkniętymi drzwiami – contentEditable&rdquo; [PL]</p>
 					<p id="intro-presentation-date">2017-11-08</p>
 					<p id="intro-profile-twitter"><a href="https://twitter.com/reinmarpl">@reinmarpl</a></p>
 				</div>
@@ -117,13 +121,13 @@
 					<li class="fragment">It's everywhere</li>
 					<li class="fragment">Starts with plain-text</li>
 					<li class="fragment">@mentions</li>
-					<li class="fragment">Semantics</li>
+					<li class="fragment">Rich-text</li>
 				</ul>
 			</section>
 
 			<section>
 				<h1>Markdown</h1>
-				<h2 class="fragment">Nope, nope, nope</h2>
+				<h2 class="fragment" style="color: #f7302f">Nope, nope, nope</h2>
 			</section>
 
 			<section>
@@ -189,8 +193,7 @@
 
 			<section>
 				<h1>Architecture</h1>
-
-				[[DIAGRAM – DOM controller]]
+				<p><img src="assets/diagram-architecture-past.png" alt="Diagram of the DOM-Controller architecture." width="700"></p>
 			</section>
 
 			<section>
@@ -229,7 +232,7 @@
 			<section>
 				<h1>New architecture</h1>
 
-				[[DIAGRAM – DOM-MVC]]
+				<p><img src="assets/diagram-architecture-new.png" alt="Diagram of the DOM-MVC architecture." width="700"></p>
 			</section>
 
 			<section>
@@ -269,14 +272,14 @@
 			<section>
 				<h1>Updated architecture</h1>
 
-				[[DIAGRAM – beforeInput-MVC-DOM]]
+				<p><img src="assets/diagram-architecture-beforeinput.png" alt="Diagram of the DOM-MVC+beforeinput architecture." width="700"></p>
 			</section>
 
 			<section>
 				<h1>3 years later...</h1>
 				<ul>
 					<li class="fragment">beforeInput</li>
-					<li class="fragment"><a href="https://w3c.github.io/editing/">New specs</a> (e.g. <a href="https://w3c.github.io/input-events/index.html">Input Events</a> – level 1 and level 2)</li>
+					<li class="fragment"><a href="https://w3c.github.io/editing/">New specs</a><br>(e.g. <a href="https://w3c.github.io/input-events/index.html">Input Events</a> – level 1 and level 2)</li>
 					<li class="fragment">Google rejects L2</li>
 				</ul>
 			</section>
@@ -288,7 +291,7 @@
 			<section>
 				<h1>Drop contentEditable?</h1>
 
-				[[DIAGRAM – beforeInput-MVC-DOM]]
+				<p><img src="assets/diagram-architecture-imeview.png" alt="Diagram of the user and IME views architecture." width="700"></p>
 			</section>
 
 			<section>
