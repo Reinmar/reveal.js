@@ -4,10 +4,10 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>CKEditor 5 – status of things</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/white.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -18,32 +18,195 @@
 			link.rel = 'stylesheet';
 			link.type = 'text/css';
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
+			document.getElementsByTagName( 'head' )[ 0 ].appendChild( link );
 		</script>
+
+		<style>
+			.reveal h1, .reveal h2, .reveal h3 {
+				text-transform: none;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					<h1>CKEditor 5</h1>
+					<h2>the status of things</h2>
+
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section>
+					<h1>Done</h1>
+					<ul>
+						<li class="fragment">It works!</li>
+						<li class="fragment">First alpha release</li>
+					</ul>
+
+					<aside class="notes">
+						* Typing starts working after 1 year<br>
+						* Limited-use-case-ready after 3 years
+					</aside>
+				</section>
+
+				<section>
+					<h1>Done</h1>
+					<ul>
+						<li class="fragment">
+							<span class="random-color">Engine,</span>
+							<span class="fragment random-color">UI&nbsp;library,</span>
+							<span class="fragment random-color">core&nbsp;architecture,</span><br>
+							<span class="fragment random-color">lists,</span>
+							<span class="fragment random-color">images,</span>
+							<span class="fragment random-color">links,</span>
+							<span class="fragment random-color">headings,</span>
+							<span class="fragment random-color">bold,</span>
+							<span class="fragment random-color">italic,</span>
+							<span class="fragment random-color">block&nbsp;quotes,</span>
+							<span class="fragment random-color">3&nbsp;creators,</span>
+							<span class="fragment random-color">base&nbsp;theme,</span>
+							<span class="fragment random-color">basic&nbsp;a11y,</span>
+							<span class="fragment random-color">Markdown&nbsp;output,</span>
+							<span class="fragment random-color">copy&nbsp;&amp;&nbsp;paste,</span>
+							<span class="fragment random-color">content&nbsp;filtering,</span>
+							<span class="fragment random-color">typing&nbsp;&amp; unicode&nbsp;support,</span>
+							<span class="fragment random-color">enter,</span>
+							<span class="fragment random-color">undo,</span>
+							<span class="fragment random-color">widgets,</span>
+							<span class="fragment random-color">placeholders,</span>
+							<span class="fragment random-color">image&nbsp;upload,</span>
+							<span class="fragment random-color">text&nbsp;autoformatting,</span>
+							<span class="fragment random-color">customisable&nbsp;theme,</span>
+							<span class="fragment random-color">translations,</span>
+							<span class="fragment">to name a few...</span>
+						</li>
+					</ul>
+
+					<aside class="notes">
+						* I'd like to quickly go through what we already have in terms of user features<br>
+						* It's easy to forget what building an <strong>extensible</strong> editor from scratch means
+					</aside>
+				</section>
+
+				<section>
+					<h1>Done</h1>
+					<ul>
+						<li class="fragment">
+							<span class="fragment random-color">3&ndash;builds,</span>
+							<span class="fragment random-color">mgit2 😎,</span>
+							<span class="fragment random-color">changelog&nbsp;generator,</span>
+							<span class="fragment random-color">release&nbsp;publisher,</span>
+							<span class="fragment random-color">automated&nbsp;tests,</span>
+							<span class="fragment random-color">CI&nbsp;integration,</span>
+							<span class="fragment random-color">manual&nbsp;tests,</span>
+							<span class="fragment random-color">Transifex&nbsp;integration,</span>
+							<span class="fragment random-color">webpack&nbsp;plugin,</span>
+							<span class="fragment random-color">ESLint&nbsp;preset&nbsp;&amp; import&nbsp;linter,</span>
+							<span class="fragment random-color">JSDoc plugin<strong>s</strong>,</span>
+							<span class="fragment random-color"><strong>Umberto&nbsp;🍻</strong>,</span>
+							<span class="fragment random-color">guides,</span>
+							<span class="fragment random-color">API&nbsp;docs,</span>
+							<span class="fragment random-color">Community&nbsp;👨‍👩‍👧‍👦,</span>
+							<span class="fragment random-color">Gitter,</span>
+							<span class="fragment">to&nbsp;name&nbsp;a&nbsp;few...</span>
+						</li>
+					</ul>
+
+					<aside class="notes">
+						* The features I've just mentioned are not everything<br>
+						* A lot o work behind the scenes<br>
+					</aside>
+				</section>
+
+				<section>
+					<h1>In progress</h1>
+
+					<ul>
+						<li>Refactoring (engine, UI, features)</li>
+						<li>Highlight</li>
+						<li>Font size and font family</li>
+						<li>Text alignment</li>
+						<li>New default theme</li>
+						<li>BrowserStack</li>
+						<li>First beta release</li>
+					</ul>
+
+					<aside class="notes">
+						* We're currently on alpha and before beta we need to stabilize the API<br>
+						* At the same time we want to unblock certain use cases
+					</aside>
+				</section>
+
+				<section>
+					<h1>Near future</h1>
+
+					<ul>
+						<li>Tables 🎉</li>
+						<li>Paste from Word 💩</li>
+						<li>Complete documentation 📘</li>
+						<li>Start making money 💸</li>
+						<li>Release v6.0.0 💥</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Future</h1>
+
+					<ul>
+						<li>Mobile devices</li>
+						<li>Media embed</li>
+						<li class="fragment">
+							<span class="random-color">magicline,</span>
+							<span class="fragment random-color">drag&amp;drop,</span>
+							<span class="fragment random-color">linking&nbsp;images,</span>
+							<span class="fragment random-color">RTL&nbsp;support,</span>
+							<span class="fragment random-color">full&nbsp;IME&nbsp;support,</span>
+							<span class="fragment random-color">a11y,</span>
+							<span class="fragment random-color">autocomplete,</span>
+							<span class="fragment random-color">typing&nbsp;improvements,</span>
+							<span class="fragment random-color">editor&nbsp;placeholder,</span>
+							<span class="fragment random-color">IE11,</span>
+							<span class="fragment random-color">ability to type after a link,</span>
+							<span class="fragment random-color">GitHub RTE,</span>
+							<span class="fragment random-color">soft&nbsp;line-break,</span>
+							<span class="fragment random-color">font&nbsp;&amp; background text color,</span>
+							<span class="fragment random-color">Vue/React/Angular integration,</span>
+							<span class="fragment random-color">code&nbsp;blocks,</span>
+							<span class="fragment random-color">wider bundlers support,</span>
+							<span class="fragment random-color">forms,</span>
+							<span class="fragment">to&nbsp;name&nbsp;a&nbsp;few...</span>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Stats!</h1>
+
+					<ul>
+						<li>1700 closed tickets, 400 rejected, 650 open</li>
 			</div>
 		</div>
-
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
 
 		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
+			Reveal.initialize( {
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
 				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+					{ src: 'plugin/highlight/highlight.js', async: true, callback() { hljs.initHighlightingOnLoad(); } }
 				]
-			});
+			} );
+
+			document.querySelectorAll( '.random-color' ).forEach( el => {
+				const hue = Math.floor( Math.random() * 36 ) * 10;
+				el.style.color = `hsl(${ hue }, 60%, 50%)`;
+			} );
 		</script>
 	</body>
 </html>
